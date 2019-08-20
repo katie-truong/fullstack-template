@@ -1,6 +1,7 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Input from "../presentational/Input.jsx";
+
 class FormContainer extends Component {
   constructor() {
     super();
@@ -17,7 +18,7 @@ class FormContainer extends Component {
     return (
       <form id="article-form">
         <Input
-          text="Katus"
+          text="Kat"
           label="seo_title"
           type="text"
           id="seo_title"
@@ -28,7 +29,5 @@ class FormContainer extends Component {
     );
   }
 }
-export default FormContainer;
+export default hot(FormContainer);
 
-const wrapper = document.getElementById("create-article-form");
-wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;

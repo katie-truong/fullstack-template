@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack -d --watch",
     "server": "nodemon server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run server\"",
+    "production": "concurrently --kill-others \"npm run build\" \"npm run server\"",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,12 +35,15 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11"
   }
 }
